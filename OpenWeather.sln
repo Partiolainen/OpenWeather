@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenWeather", "OpenWeather\OpenWeather.csproj", "{0DA50D04-9E80-4C45-97EA-5615F1B2CF02}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example", "Example\Example.csproj", "{A7210412-22CE-4C5C-8B63-4FFB7A8CFFF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenWeather.Core", "OpenWeather.Core\OpenWeather.Core.csproj", "{C2F75BAA-A05A-45B1-BA4C-34A9A3937100}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Core", "Example.Core\Example.Core.csproj", "{6D6E7C11-FC9C-44BA-97B9-3D6E7F3B99D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,8 +40,31 @@ Global
 		{A7210412-22CE-4C5C-8B63-4FFB7A8CFFF7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A7210412-22CE-4C5C-8B63-4FFB7A8CFFF7}.Windows|Any CPU.ActiveCfg = Debug|Any CPU
 		{A7210412-22CE-4C5C-8B63-4FFB7A8CFFF7}.Windows|Any CPU.Build.0 = Debug|Any CPU
+		{C2F75BAA-A05A-45B1-BA4C-34A9A3937100}.Android|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2F75BAA-A05A-45B1-BA4C-34A9A3937100}.Android|Any CPU.Build.0 = Debug|Any CPU
+		{C2F75BAA-A05A-45B1-BA4C-34A9A3937100}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2F75BAA-A05A-45B1-BA4C-34A9A3937100}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2F75BAA-A05A-45B1-BA4C-34A9A3937100}.Linux|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2F75BAA-A05A-45B1-BA4C-34A9A3937100}.Linux|Any CPU.Build.0 = Debug|Any CPU
+		{C2F75BAA-A05A-45B1-BA4C-34A9A3937100}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2F75BAA-A05A-45B1-BA4C-34A9A3937100}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2F75BAA-A05A-45B1-BA4C-34A9A3937100}.Windows|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2F75BAA-A05A-45B1-BA4C-34A9A3937100}.Windows|Any CPU.Build.0 = Debug|Any CPU
+		{6D6E7C11-FC9C-44BA-97B9-3D6E7F3B99D0}.Android|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D6E7C11-FC9C-44BA-97B9-3D6E7F3B99D0}.Android|Any CPU.Build.0 = Debug|Any CPU
+		{6D6E7C11-FC9C-44BA-97B9-3D6E7F3B99D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D6E7C11-FC9C-44BA-97B9-3D6E7F3B99D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D6E7C11-FC9C-44BA-97B9-3D6E7F3B99D0}.Linux|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D6E7C11-FC9C-44BA-97B9-3D6E7F3B99D0}.Linux|Any CPU.Build.0 = Debug|Any CPU
+		{6D6E7C11-FC9C-44BA-97B9-3D6E7F3B99D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D6E7C11-FC9C-44BA-97B9-3D6E7F3B99D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D6E7C11-FC9C-44BA-97B9-3D6E7F3B99D0}.Windows|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D6E7C11-FC9C-44BA-97B9-3D6E7F3B99D0}.Windows|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {26B1469E-6A40-4A90-AD71-BAF0E08A588A}
 	EndGlobalSection
 EndGlobal
