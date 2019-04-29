@@ -20,12 +20,12 @@ namespace Example
 
 		private static void Station_Updated(object source, LocationUpdateEventArgs e)
 		{
-			var station = source as MetarStation;
-			Console.WriteLine($"Station: {station.GetStationInfo.Name}\n" +
-			                  $"ICAO: {station.GetStationInfo.ICAO}\n" +
-			                  $"Temperature: {station.Weather.Temperature} {station.Units.TemperatureUnit}\n" +
-			                  $"Pressure: {station.Weather.Pressure} {station.Units.PressureUnit}\n" +
-			                  $"Wind Speed: {station.Weather.WindSpeed} {station.Units.WindSpeedUnit}");
+			if (source is MetarStation station)
+				Console.WriteLine($"Station: {station.GetStationInfo.Name}\n" +
+				                  $"ICAO: {station.GetStationInfo.ICAO}\n" +
+				                  $"Temperature: {station.Weather.Temperature} {station.Units.TemperatureUnit}\n" +
+				                  $"Pressure: {station.Weather.Pressure} {station.Units.PressureUnit}\n" +
+				                  $"Wind Speed: {station.Weather.WindSpeed} {station.Units.WindSpeedUnit}");
 		}
 	}
 }

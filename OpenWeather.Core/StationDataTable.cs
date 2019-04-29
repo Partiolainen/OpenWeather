@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
@@ -55,18 +56,23 @@ namespace OpenWeather
         {
             var row = Stations.Rows.Cast<DataRow>().ToList().SingleOrDefault(r => (string)r["ICAO"] == icao.ToUpper());
 
-            var info = new StationInfo
-            {
-                ICAO = (string)row["ICAO"],
-                Location = new GeoCoordinate((double)row["Latitude"], (double)row["Longitude"]),
-                Elevation = (double)row["Elevation"],
-                Country = (string)row["Country"],
-                Region = (string)row["Region"],
-                City = (string)row["City"],
-                Name = (string)row["City"]
-            };
+	        if (row != null)
+	        {
+		        var info = new StationInfo
+		        {
+			        ICAO = (string)row["ICAO"],
+			        Location = new GeoCoordinate((double)row["Latitude"], (double)row["Longitude"]),
+			        Elevation = (double)row["Elevation"],
+			        Country = (string)row["Country"],
+			        Region = (string)row["Region"],
+			        City = (string)row["City"],
+			        Name = (string)row["City"]
+		        };
 
-            return info;
+		        return info;
+	        }
+
+	        throw new KeyNotFoundException("ICAO code not found");
         }
 
         /// <summary>
@@ -86,25 +92,26 @@ namespace OpenWeather
         public StationInfo GetClosestStationInfo(double latitude, double longitude)
         {
             var rows = Stations.Rows.Cast<DataRow>().ToList();
-            var closestStation = new StationInfo
+            StationInfo[] closestStation =
+            {new StationInfo
             {
-                ICAO = (string)rows[0]["ICAO"],
-                Location = new GeoCoordinate((double)rows[0]["Latitude"], (double)rows[0]["Longitude"]),
-                Elevation = (double)rows[0]["Elevation"],
-                Country = (string)rows[0]["Country"],
-                Region = (string)rows[0]["Region"],
-                City = (string)rows[0]["City"],
-                Name = (string)rows[0]["City"]
-            };
+	            ICAO = (string)rows[0]["ICAO"],
+	            Location = new GeoCoordinate((double)rows[0]["Latitude"], (double)rows[0]["Longitude"]),
+	            Elevation = (double)rows[0]["Elevation"],
+	            Country = (string)rows[0]["Country"],
+	            Region = (string)rows[0]["Region"],
+	            City = (string)rows[0]["City"],
+	            Name = (string)rows[0]["City"]
+            }};
 
 #if !ANDROID
             var location = new GeoCoordinate(latitude, longitude);
 
             foreach (var row in from row in rows.Skip(1)
                                 let dest = new GeoCoordinate((double)row["Latitude"], (double)row["Longitude"])
-                                where location.GetDistanceTo(dest) < location.GetDistanceTo(closestStation.Location)
+                                where location.GetDistanceTo(dest) < location.GetDistanceTo(closestStation[0].Location)
                                 select row)
-                closestStation = new StationInfo
+                closestStation[0] = new StationInfo
                 {
                     ICAO = (string)row["ICAO"],
                     Location = new GeoCoordinate((double)row["Latitude"], (double)row["Longitude"]),
@@ -145,7 +152,7 @@ namespace OpenWeather
                 Name = (string)row["City"]
             };
 #endif
-            return closestStation;
+            return closestStation[0];
         }
 
         #region IDisposable Support

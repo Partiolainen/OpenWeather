@@ -60,7 +60,7 @@ namespace OpenWeather
             var node = doc.Root;
 
             var address =
-                from el in node.Elements(element)
+                from el in node?.Elements(element)
                 where (string)el.Attribute(attribute) == value
                 select el;
 

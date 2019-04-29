@@ -3,7 +3,23 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>OpenWeather</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <Version>1.1.0</Version>
+    <Authors>Centauri Software &amp; Innovations, Ryan Cooper, Partiolainen</Authors>
+    <Company>Centauri Software &amp; Innovations, Ryan Cooper, Partiolainen</Company>
+    <Description>Library to search and retrieve weather data (from NOAA) via latitude and logitude or ICAO code. Ported to .NET Standard</Description>
+    <Copyright>Copyright © Ryan Cooper 2016, Partiolainen 2019</Copyright>
+    <PackageTags>Weather, ICAO, METAR, OpenWeather, OpenWeather.pw</PackageTags>
+    <PackageProjectUrl>http://openweather.pw/</PackageProjectUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
+	<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>OpenWeather.PW.Core</PackageId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="LICENSE.txt" Pack="true" PackagePath="LICENSE.txt" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="GeoCoordinate.NetStandard1" Version="1.0.1" />
