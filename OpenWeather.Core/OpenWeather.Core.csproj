@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>OpenWeather</RootNamespace>
     <LangVersion>latest</LangVersion>
-    <Version>1.1.0</Version>
+    <Version>1.3.0</Version>
     <Authors>Centauri Software &amp; Innovations, Ryan Cooper, Partiolainen</Authors>
     <Company>Centauri Software &amp; Innovations, Ryan Cooper, Partiolainen</Company>
     <Description>Library to search and retrieve weather data (from NOAA) via latitude and logitude or ICAO code. Ported to .NET Standard</Description>
